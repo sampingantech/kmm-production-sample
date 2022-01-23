@@ -37,3 +37,10 @@ tasks.withType<DependencyUpdatesTask> {
         isNonStable(candidate.version) && !isNonStable(currentVersion)
     }
 }
+
+rootProject.plugins.withType<org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootPlugin> {
+    rootProject.the<org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension>().apply {
+        download = false
+        nodeVersion = "17.4.0"
+    }
+}
